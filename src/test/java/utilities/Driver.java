@@ -14,8 +14,7 @@ public class Driver {
     public static WebDriver getDriver(){
         if (driver==null){
 
-            switch ( ConfigReader.getProperty("browser")) {
-
+            switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -24,7 +23,6 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-
                 case "opera":
                     WebDriverManager.operadriver().setup();
                     driver = new OperaDriver();
@@ -37,9 +35,7 @@ public class Driver {
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
-
             }
-
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         }

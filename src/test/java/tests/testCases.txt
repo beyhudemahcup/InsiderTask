@@ -1,0 +1,26 @@
+
+     testimiz yalnizca firefox tarayicisinda calisiyor. Bunun sebebini anlayamadim fakat firefoxu kullandigimda
+     testlerden bekledigim statusleri aldim. Fakat n11 site olarak yeterli stabilitede degil. Bundan oturu taski yaparken
+     beni cok ugrastirdi ve sebebini bilmedigim birkac hata alip durdum. Toplu bir execution icin .xml create ettim fakat
+     toplu executionda fail aldim.
+
+       Decision table testing yaparak tum olasiliklar icin login page'in bize verecegi responselari test edebiliriz
+
+      bunun icin goz onune alacagimiz olasiliklar su sekilde olacaktir:
+
+      email                 password        expected result
+
+      valid                 valid           siteye giris yapilabilir
+      valid                 invalid         siteye giris yapilamaz bir uyari yazisi gozukur
+      invalid                 valid         siteye giris yapilamaz bir uyari yazisi gozukur
+      invalid                 invalid         siteye giris yapilamaz bir uyari yazisi gozukur
+
+      manual olarak testlerimi run ettigimde expected resultlarim ile actual resultlarimin birbirine esit oldugunu gozlemledim
+
+
+      Bunun icin 1 pozitif ve 3 negatif test case kullanacagim
+      bu classta email ve password icin valid degerler giriyorum
+      TC_001 Kullanici valid email ve valid password degerlerini girer, login oldugunu test eder
+      TC_002 Kullanici valid email ve invalid password degerlerini girer, "E-posta adresiniz veya şifreniz hatalı yazisini gorur"
+      TC_003 Kullanici invalid email ve valid password degerlerini girer, "E-posta adresiniz veya şifreniz hatalı yazisini gorur"
+      TC_004 Kullanici invalid email ve invalid password degerlerini girer, "E-posta adresiniz veya şifreniz hatalı yazisini gorur"

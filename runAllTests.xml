@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="execution of all test cases">
+<test name="execution of all test cases">
+    <classes>
+        <class name="tests.PositiveLoginTest"/>
+        <class name="tests.NegativeLoginTest"/>
+    </classes>
+</test>
+</suite>
